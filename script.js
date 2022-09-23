@@ -27,13 +27,15 @@ let multiA;
 let row;
 let square;
 let checkVal = false;
+let checkRainbow = false;
 //clickRainbow = selectRainbow.addEventListener("click");
+selectRainbow.addEventListener("click",()=>{
+    checkRainbow = !checkRainbow;
+})
 
 gridButton.addEventListener("click",()=>{
 
     container.innerHTML = ("");
-
-
 
     const a = prompt("Choose a grid amount","");
     multiA = a*a;
@@ -58,18 +60,13 @@ gridButton.addEventListener("click",()=>{
             theDiv.addEventListener("mouseover",() => {
                 if(checkVal){
                 theDiv.setAttribute("style","background-color:black");
+                    if(checkRainbow){theDiv.setAttribute("style","background-color:red");}
                 }
                 })
         /*theDiv.addEventListener("mouseout",()=>{
             theDiv.setAttribute("style","background-color:white");
         })*/
     }
-
     
-
 })
-
-
-
-
 
