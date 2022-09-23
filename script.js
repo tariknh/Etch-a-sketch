@@ -1,5 +1,6 @@
 const container = document.getElementById("container");
-const btn = document.querySelector("button");
+const gridButton = document.getElementById("gridSelect");
+const selectRainbow = document.getElementById("selectRainbow");
 let div;
 let div2;
 function divCreate (i){
@@ -25,8 +26,10 @@ console.log(allDivs);
 let multiA;
 let row;
 let square;
+let checkVal = false;
+//clickRainbow = selectRainbow.addEventListener("click");
 
-btn.addEventListener("click",()=>{
+gridButton.addEventListener("click",()=>{
 
     container.innerHTML = ("");
 
@@ -47,15 +50,26 @@ btn.addEventListener("click",()=>{
     for (i=0; i<multiA; i++){
         divCreate(i);
     };
-
+    
+    //console.log(check);
+    
     for (const theDiv of allDivs){
-        theDiv.addEventListener("mouseover",() => {
-            theDiv.setAttribute("style","background-color:black");
-        });
+            theDiv.addEventListener("click",()=>checkVal = !checkVal);
+            theDiv.addEventListener("mouseover",() => {
+                if(checkVal){
+                theDiv.setAttribute("style","background-color:black");
+                }
+                })
         /*theDiv.addEventListener("mouseout",()=>{
             theDiv.setAttribute("style","background-color:white");
         })*/
-    };
-});
+    }
+
+    
+
+})
+
+
+
 
 
