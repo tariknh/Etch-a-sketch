@@ -66,9 +66,10 @@ gridButton.addEventListener("click",()=>{
     for (const theDiv of allDivs){
             theDiv.addEventListener("click",()=>checkVal = !checkVal);
             theDiv.addEventListener("mouseover",() => {
+            theDiv.setAttribute("id","colored");
                 if(checkVal){
-                theDiv.setAttribute("style","background-color:black");
-                    if(checkRainbow){theDiv.setAttribute("style",`background-color:${randomColorGenerator()}`);}
+                        theDiv.setAttribute("style",`background-color:black; opacity: 1`);
+                        if(checkRainbow){theDiv.setAttribute("style",`background-color:${randomColorGenerator()}`);}
                 }
                 })
         /*theDiv.addEventListener("mouseout",()=>{
