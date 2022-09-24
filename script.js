@@ -33,6 +33,14 @@ selectRainbow.addEventListener("click",()=>{
     checkRainbow = !checkRainbow;
 })
 
+function randomColorGenerator(){
+    let randomColor = "#"+Math.floor(Math.random()*16777215).toString(16);
+    console.log(randomColor);
+    if (randomColor.length !== 7){
+        randomColor = randomColorGenerator();
+    }else return randomColor;
+}
+
 gridButton.addEventListener("click",()=>{
 
     container.innerHTML = ("");
@@ -60,7 +68,7 @@ gridButton.addEventListener("click",()=>{
             theDiv.addEventListener("mouseover",() => {
                 if(checkVal){
                 theDiv.setAttribute("style","background-color:black");
-                    if(checkRainbow){theDiv.setAttribute("style","background-color:red");}
+                    if(checkRainbow){theDiv.setAttribute("style",`background-color:${randomColorGenerator()}`);}
                 }
                 })
         /*theDiv.addEventListener("mouseout",()=>{
